@@ -1,2 +1,1 @@
 """Notebook-side visualization helpers."""
-

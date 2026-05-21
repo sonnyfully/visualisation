@@ -1,2 +1,1 @@
 """Structural segmentation wrappers."""
-

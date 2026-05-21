@@ -5,4 +5,3 @@ contract instead of Python DSP internals.
 """
 
 SCHEMA_VERSION = "timeline.v1"
-

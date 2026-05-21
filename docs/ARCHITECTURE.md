@@ -9,7 +9,7 @@ How the repo is laid out and how the pieces fit together. Read this after `CONTE
             │
             ▼
    ┌─────────────────────┐
-   │  Python DSP layer   │   librosa, madmom, MSAF
+   │  Python DSP layer   │   librosa, NumPy, Pandas
    │  (src/audio/)       │   onset, beat, spectral, structural
    └─────────────────────┘
             │
@@ -62,7 +62,7 @@ audio-visual-project/
 │   │   ├── features.py        # Spectral features, RMS, centroid, flux
 │   │   ├── onsets.py          # Onset detection
 │   │   ├── beats.py           # Beat + downbeat tracking
-│   │   ├── structure.py       # Structural segmentation (MSAF wrapper)
+│   │   ├── structure.py       # Structural segmentation
 │   │   ├── harmonic.py        # HPSS, chroma, key estimation
 │   │   └── config.py          # Sample rates, hop sizes, FFT windows
 │   │
@@ -106,8 +106,8 @@ The DSP and MIR layer. Everything here is pure Python, returns numpy arrays or d
 - `loader.py` — load audio, resample to project sample rate, return mono/stereo numpy arrays. Single source of truth for sample rate.
 - `features.py` — frame-level spectral features (centroid, rolloff, flux, RMS, MFCC).
 - `onsets.py` — onset detection, multiple methods (spectral flux, complex domain, etc.) for comparison.
-- `beats.py` — beat tracking and downbeat estimation. `madmom` underneath.
-- `structure.py` — structural segmentation. `MSAF` wrapper. Outputs section boundaries and (optionally) labels.
+- `beats.py` — beat tracking and downbeat estimation. Start with a `librosa` beat baseline; select a maintained downbeat tracker in Stage 2.
+- `structure.py` — structural segmentation. Start with from-scratch Foote-style novelty and `librosa.segment` primitives; select any external comparison library in Stage 3.
 - `harmonic.py` — harmonic/percussive separation, chroma, key estimation.
 - `config.py` — `SAMPLE_RATE`, `HOP_SIZE`, `FRAME_SIZE`, etc. All magic numbers live here with comments on why.
 
@@ -151,7 +151,7 @@ TimelineV1
 │   └── confidence[]
 ├── phrases      # 4–8 bar groupings (derived)
 │   └── boundaries[], energies[]
-└── sections     # structural, from MSAF
+└── sections     # structural boundaries and labels
     ├── boundaries[], labels[]
     └── novelty_curve[]
 ```
