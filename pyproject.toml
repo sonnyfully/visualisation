@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "visualisation"
+version = "0.1.0"
+description = "Music-driven generative visual systems for cinematic real-time rendering."
+requires-python = ">=3.11"
+dependencies = [
+  "librosa",
+  "madmom",
+  "matplotlib",
+  "msaf",
+  "numpy",
+  "pandas",
+  "pydantic",
+]
+
+[project.optional-dependencies]
+dev = [
+  "black",
+  "pytest",
+  "ruff",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+

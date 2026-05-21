@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+dist/
+build/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Obsidian local workspace state
+docs/.obsidian/
+
+# Local audio and generated timeline data
+data/tracks/*
+data/outputs/*
+!data/tracks/.gitkeep
+!data/outputs/.gitkeep
+
+# Rendered media and image sequences
+*.mp4
+*.mov
+*.exr
+*.wav
+*.flac
+*.aiff
+*.mp3
+
+# Unreal generated files
+unreal/Binaries/
+unreal/DerivedDataCache/
+unreal/Intermediate/
+unreal/Saved/
+unreal/.vs/
+
+# macOS
+.DS_Store
