@@ -24,11 +24,11 @@ Aesthetic reference library lives in `docs/aesthetic/` — stills with teardown 
 ## Stack — decided
 
 - **Visual engine: Unreal Engine 5.4+.** Lumen for global illumination, Niagara for atmospheric particles, post-process volume for lens character, Movie Render Queue for final output. Higher ramp than TouchDesigner, but the aesthetic ceiling matches the target. See `decisions.md` for the tradeoff analysis.
-- **Audio analysis: Python.** `librosa` + `madmom` + `MSAF` for MIR features (onset, beat, downbeat, spectral, structural segmentation). Jupyter for exploration, modules in `src/` for stable code.
+- **Audio analysis: Python.** `librosa` + NumPy/Pandas/Matplotlib for MIR features (onset, beat, spectral features, and structural-analysis primitives). Downbeat tracking and structure-comparison tools will be selected in the relevant stages from modern, maintained options rather than locking the project to legacy Python. Jupyter for exploration, modules in `src/` for stable code.
 - **Audio → visual bridge: offline first.** Python produces feature curves as CSV/JSON timeline data, Unreal Sequencer consumes them. Real-time via OSC is a later concern, not week one.
 - **Output format: pre-rendered generative music videos.** One track at a time, fully composed, 3–5 minutes. No live performance constraint (no hardware for it currently).
 - **Coding agent: Codex.** One agent. `AGENTS.md` is its entry point.
-- **Notes / research: Obsidian, vault = this repo's `docs/` folder.** Single source of truth, version-controlled. NotebookLM for paper collection and querying; synthesized notes in `docs/research/`.
+- **Notes / research: Obsidian, vault = this repo's `docs/` folder.** Project docs are version-controlled, while local research notes in `docs/research/` are ignored by Git by default. NotebookLM can hold the raw collection and querying; synthesized private notes can still live locally in `docs/research/`.
 - **Version control: Git, real workflow.** See `AGENTS.md`.
 
 ## Current focus
@@ -60,7 +60,7 @@ The technical depth this project needs:
 - **Audio-visual mapping:** the open problem. How do you map structural features (not just spectral ones) to visual parameters that produce *feeling* rather than reactivity? Likely involves multi-timescale mapping (sample-level → beat-level → phrase-level → section-level).
 - **Generative visual models (later):** real-time neural rendering, latent diffusion at frame rate, conditioning on audio features. Not week-one work.
 
-Synthesized notes per paper in `docs/research/`. NotebookLM holds the raw collection.
+Synthesized local notes per paper can live in `docs/research/` without being pushed. NotebookLM holds the raw collection.
 
 ## Long horizon
 
