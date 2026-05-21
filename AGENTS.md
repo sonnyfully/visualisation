@@ -32,7 +32,7 @@ This project uses real Git discipline. The point is to build habits that transfe
 - **Plot everything in notebooks.** DSP work without visualization is guessing. Every audio feature gets plotted against the waveform at least once before it's trusted.
 - **No magic numbers.** Sample rates, hop sizes, FFT windows live in a config module with comments on why those values.
 - **Decisions go in `docs/decisions.md`** when they're non-obvious. Append-only, dated.
-- **Research synthesis goes in `docs/research/`** as one file per paper. Don't dump raw PDFs into the repo — synthesize what matters.
+- **Research synthesis goes in local `docs/research/` notes** as one file per paper. These notes are intentionally ignored by Git by default so they can be referenced locally without being pushed. Don't dump raw PDFs into the repo — synthesize what matters.
 - **Don't pick new tools without raising it.** The tool stack is deliberately minimal. If you think a new dependency is needed, propose it in a comment on the relevant PR or as a note in `decisions.md`, don't just `pip install` it.
 
 ## Code style

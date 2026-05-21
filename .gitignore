@@ -16,6 +16,11 @@ build/
 # Obsidian local workspace state
 docs/.obsidian/
 
+# Local Obsidian research notes
+docs/research/**
+!docs/research/
+!docs/research/README.md
+
 # Local audio and generated timeline data
 data/tracks/*
 data/outputs/*

@@ -48,8 +48,8 @@ audio-visual-project/
 │   ├── CONTEXT.md             # Project briefing — read this first
 │   ├── ARCHITECTURE.md        # This file
 │   ├── decisions.md           # Append-only decision log
-│   ├── research/              # One markdown file per paper / reference
-│   │   └── <paper-slug>.md    # Link, summary, what to steal
+│   ├── research/              # Local ignored notes; one markdown file per paper / reference
+│   │   └── <paper-slug>.md    # Link, summary, what to steal (not pushed by default)
 │   └── aesthetic/             # Visual reference library
 │       ├── batman-2022/       # Stills + teardown notes
 │       ├── kissland/
@@ -160,8 +160,8 @@ The multi-timescale structure is intentional — it's the architecture answer to
 
 ## What lives outside this repo
 
-- **NotebookLM** — raw paper collection and Q&A. Synthesized notes come back into `docs/research/` as markdown.
-- **Obsidian vault** — *is* `docs/`. Don't maintain a separate vault.
+- **NotebookLM** — raw paper collection and Q&A. Synthesized private notes can live locally in `docs/research/` as markdown.
+- **Obsidian vault** — *is* `docs/`. Don't maintain a separate vault. Research notes are ignored by Git by default.
 - **Audio files** — in `data/tracks/` locally, not committed to Git (copyright + size).
 - **Rendered video output** — local only or external storage, not in Git.
 
