@@ -16,6 +16,8 @@ class AudioConfig:
     # 2048/512 is a common MIR starting point for spectral features in librosa.
     frame_size: int = 2_048
     hop_size: int = 512
+    # 85% rolloff is the common MIR default for tracking high-frequency spread.
+    rolloff_percent: float = 0.85
     mono: bool = True
 
 

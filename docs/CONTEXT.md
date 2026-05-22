@@ -33,13 +33,11 @@ Aesthetic reference library lives in `docs/aesthetic/` — stills with teardown 
 
 ## Current focus
 
-[Update this section as work progresses. Replace bracketed placeholders.]
-
-- **Phase:** [e.g. Week 1 — engine fluency + first DSP pipeline]
-- **Active branch:** [e.g. `feature/onset-detection`]
-- **Track being worked on:** [specific song title and artist]
-- **Open question being answered:** [e.g. "which onset detection method tracks perceived beats most accurately on synth-heavy material?"]
-- **Blockers:** [none / list]
+- **Phase:** Stage 1 — audio in, plotted out
+- **Active branch:** `feature/stage-1-audio-loading`
+- **Track being worked on:** The Weeknd — "Tears In The Rain"
+- **Open question being answered:** can the Python side load the target track and produce waveform, spectrogram, RMS, and basic spectral plots that match what is heard?
+- **Blockers:** target audio file must exist locally at `data/tracks/the-weeknd-tears-in-the-rain.wav`; audio remains gitignored.
 
 ## What's been ruled out
 
