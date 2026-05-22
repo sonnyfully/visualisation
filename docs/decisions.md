@@ -43,3 +43,13 @@ Decision: remove `madmom` and `MSAF` from the Stage 0 Python environment and req
 Why: the PyPI `madmom` release does not work cleanly with the modern scientific Python stack. It needs legacy build handling, imports APIs removed from `collections`, and uses NumPy aliases removed after NumPy 1.20. `MSAF` also installs but fails to import against current SciPy. Keeping either in Stage 0 would force the project toward old Python for dependencies only needed later as comparison tools.
 
 Alternatives considered: pinning the project to Python 3.11 or patching legacy dependencies locally. Rejected because Stage 0 should establish a clean, reproducible modern environment. Downbeat tracking and structure comparison remain important, but they should be selected in their own stages from maintained options such as Beat This, Essentia, or `librosa.segment` after explicit comparison.
+
+## 2026-05-22 — Use "Tears In The Rain" As The First Target Track
+
+Decision: use The Weeknd's "Tears In The Rain" as the initial Stage 1 target track, expected locally at `data/tracks/the-weeknd-tears-in-the-rain.wav`.
+
+Why: the track sits close to the project's Kissland-era Weeknd reference point, has a slow cinematic arc, and gives Stage 1 enough contrast for waveform, RMS, spectral centroid, spectral flux, and rolloff plots to be musically legible before moving into onset and structure work.
+
+Alternatives considered: using a generated synthetic demo track was rejected as the target because it would not test the emotional and production texture this project cares about. Using a harder club track first was rejected because Stage 1 should validate the analysis loop on a cinematic reference before optimizing for dense percussion.
+
+Status: local audio remains gitignored for copyright and size reasons. If the preferred target changes, append a superseding decision instead of editing this one.
